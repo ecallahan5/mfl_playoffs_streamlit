@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 st.header('2023 On The Door Forecasts')
 st.markdown("""---""")
 
-st.header('Title Chances!)
+st.header('Title Chances!')
 champ = pd.DataFrame({
      'Team': ["01", "02", "03", "04", "05", "06", "07"],
      'Win Probability': [10, 20, 10, 15, 25, 5, 15]
