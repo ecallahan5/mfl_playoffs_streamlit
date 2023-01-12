@@ -1,3 +1,4 @@
 streamlit==1.15.2
 plotly==5.7.0
 gsheetsdb
+pyparsing
