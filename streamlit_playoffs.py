@@ -21,12 +21,14 @@ def run_query(query):
     return rows
 
 sheet_url = st.secrets["private_gsheets_url"]
-rows = run_query(f'SELECT * FROM "{sheet_url}"')
+sheets_df = run_query(f'SELECT * FROM "{sheet_url}"')
 
 # Print results.
 for row in rows:
     st.write(f"{row.index} has a :{row.chance}:")
 
+
+st.write(sheets_df)
 st.header('Wide Right Playoffs')
 st.markdown("""---""")
 
