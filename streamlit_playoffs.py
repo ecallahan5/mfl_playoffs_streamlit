@@ -25,7 +25,7 @@ rows = run_query(f'SELECT * FROM "{sheet_url}"')
 
 # Print results.
 for row in rows:
-    st.write(f"{row.index} has a :{row.0}:")
+    st.write(f"{row.index} has a :{row.chance}:")
 
 st.header('Wide Right Playoffs')
 st.markdown("""---""")
