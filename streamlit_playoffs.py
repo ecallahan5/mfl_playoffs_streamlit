@@ -23,8 +23,6 @@ def run_query(query):
 sheet_url = st.secrets["private_gsheets_url"]
 sheets_df = pd.DataFrame(run_query(f'SELECT * FROM "{sheet_url}"'))
 
-st.write(sheets_df)
-
 st.header('2023 On The Door Forecasts')
 st.markdown("""---""")
 
