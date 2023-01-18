@@ -31,8 +31,8 @@ fig = px.pie(sheets_df, values='prob', names='Team', title='Before Wild Card Wee
 st.plotly_chart(fig, use_container_width=True)
 
 # Update with Wild Card Results
-sheet_url = st.secrets["private_gsheets_url"]
-wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_data_url}"'))
+wc_sheet_url = st.secrets["private_gsheets_url"]
+wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_sheet_url}"'))
 
 fig = px.pie(wc_df, values='prob', names='Team', title='Before Wild Card Week')
 st.plotly_chart(fig, use_container_width=True)
