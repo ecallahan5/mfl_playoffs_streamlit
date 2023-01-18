@@ -6,6 +6,10 @@ import plotly.graph_objects as go
 from google.oauth2 import service_account
 from gsheetsdb import connect
 
+round_select = st.radio(
+    "Choose the Round to View",
+    ('Wild Card', 'Divisional'))
+
 # Create a connection object.
 credentials = service_account.Credentials.from_service_account_info(
     st.secrets["gcp_service_account"],
