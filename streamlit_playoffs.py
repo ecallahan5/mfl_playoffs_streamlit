@@ -34,5 +34,5 @@ st.plotly_chart(fig, use_container_width=True)
 wc_sheet_url = st.secrets["gsheets"]["wc_data_url"]
 wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_sheet_url}"'))
 
-fig1 = px.pie(wc_df, values='prob', names='Team', title='Before Divisional Week')
+fig1 = px.pie(wc_df, values='title_chance', names='Team', title='Before Divisional Week')
 st.plotly_chart(fig1, use_container_width=True)
