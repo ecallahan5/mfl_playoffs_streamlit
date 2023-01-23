@@ -44,7 +44,7 @@ fig1 = px.pie(wc_df, values='title_chance', names='Team', title='Before Division
 
 # Update with Division Round Results
 div_sheet_url = st.secrets["gsheets"]["div_data_url"]
-div_df = pd.DataFrame(run_query(f'SELECT * FROM "{div_data_url}"'))
+div_df = pd.DataFrame(run_query(f'SELECT * FROM "{div_sheet_url}"'))
 
 fig2 = px.pie(div_df, values='title_chance', names='Team', title='Before Conference Champ Week')
 # st.plotly_chart(fig1, use_container_width=True)
