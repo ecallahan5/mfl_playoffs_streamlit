@@ -8,7 +8,7 @@ from gsheetsdb import connect
 
 round_select = st.radio(
     "Choose the Round to View",
-    ('Wild Card', 'Divisional', 'Conference))
+    ('Wild Card', 'Divisional', 'Conference'))
 
 # Create a connection object.
 credentials = service_account.Credentials.from_service_account_info(
