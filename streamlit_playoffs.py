@@ -6,9 +6,9 @@ import plotly.graph_objects as go
 from google.oauth2 import service_account
 from gsheetsdb import connect
 
-round_select = st.radio(
-    "Choose the Round to View",
-    ('Wild Card', 'Divisional', 'Conference', 'Super Bowl'))
+# round_select = st.radio(
+#     "Choose the Round to View",
+#     ('Wild Card', 'Divisional', 'Conference', 'Super Bowl'))
 
 # Create a connection object.
 credentials = service_account.Credentials.from_service_account_info(
@@ -31,8 +31,11 @@ st.header('2023 On The Door Forecasts')
 st.markdown("""---""")
 
 st.header('Title Chances!')
-fig = px.pie(sheets_df, values='prob', names='Team', title='Before Wild Card Week')
-st.plotly_chart(fig, use_container_width=True)
+# fig = px.pie(sheets_df, values='prob', names='Team', title='Before Wild Card Week')
+# st.plotly_chart(fig, use_container_width=True)
+
+# sheets_df = champ_df.rename(columns={"franchise_name" : "Team", "Champ" : "Probability"})
+st.bar_chart(sheets_df, x='Team', y='title_chance')
 
 
 # # Update with Wild Card Results
