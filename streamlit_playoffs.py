@@ -24,8 +24,8 @@ def run_query(query):
     rows = rows.fetchall()
     return rows
 
-sheet_url = st.secrets["gsheets"]["private_gsheets_url"]
-sheets_df = pd.DataFrame(run_query(f'SELECT * FROM "{sheet_url}"'))
+# sheet_url = st.secrets["gsheets"]["private_gsheets_url"]
+# sheets_df = pd.DataFrame(run_query(f'SELECT * FROM "{sheet_url}"'))
 
 st.header('2024 On The Door Forecasts')
 st.markdown("""---""")
@@ -35,15 +35,15 @@ st.header('Title Chances!')
 # st.plotly_chart(fig, use_container_width=True)
 
 # sheets_df = champ_df.rename(columns={"franchise_name" : "Team", "Champ" : "Probability"})
-st.bar_chart(sheets_df, x='Team', y='title_chance')
+# st.bar_chart(sheets_df, x='Team', y='title_chance')
 
 
 # # Update with Wild Card Results
-# wc_sheet_url = st.secrets["gsheets"]["wc_data_url"]
-# wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_sheet_url}"'))
+wc_sheet_url = st.secrets["gsheets"]["wc_data_url"]
+wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_sheet_url}"'))
 
-# fig1 = px.pie(wc_df, values='title_chance', names='Team', title='Before Divisional Week')
-# # st.plotly_chart(fig1, use_container_width=True)
+fig1 = px.pie(wc_df, values='title_chance', names='Team', title='Before Divisional Week')
+st.plotly_chart(fig1, use_container_width=True)
 
 # # Update with Division Round Results
 # div_sheet_url = st.secrets["gsheets"]["div_data_url"]
