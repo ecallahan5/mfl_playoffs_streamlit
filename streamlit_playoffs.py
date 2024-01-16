@@ -31,7 +31,7 @@ st.header('2024 On The Door Forecasts')
 st.markdown("""---""")
 
 st.header('Title Chances!')
-st.subheader('Before Wild Card Week')
+
 # fig = px.pie(sheets_df, values='prob', names='Team')
 # st.plotly_chart(fig, use_container_width=True)
 
@@ -42,10 +42,11 @@ st.subheader('Before Wild Card Week')
 # # Update with Wild Card Results
 wc_sheet_url = st.secrets["gsheets"]["wc_data_url"]
 wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_sheet_url}"'))
+st.subheader('Before Divisional Week')
 
 # fig1 = px.pie(wc_df, values='title_chance', names='Team', title='Before Divisional Week')
 # st.plotly_chart(fig1, use_container_width=True)
-st.bar_chart(wc_df, x='Team', y='title_chance', title='Before Divisional Week')
+st.bar_chart(wc_df, x='Team', y='title_chance')
 
 
 # # Update with Division Round Results
