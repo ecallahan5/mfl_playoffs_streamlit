@@ -42,8 +42,10 @@ st.header('Title Chances!')
 wc_sheet_url = st.secrets["gsheets"]["wc_data_url"]
 wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_sheet_url}"'))
 
-fig1 = px.pie(wc_df, values='title_chance', names='Team', title='Before Divisional Week')
-st.plotly_chart(fig1, use_container_width=True)
+# fig1 = px.pie(wc_df, values='title_chance', names='Team', title='Before Divisional Week')
+# st.plotly_chart(fig1, use_container_width=True)
+# st.bar_chart(wc_df, x='Team', y='title_chance', title='Before Divisional Week')
+
 
 # # Update with Division Round Results
 # div_sheet_url = st.secrets["gsheets"]["div_data_url"]
