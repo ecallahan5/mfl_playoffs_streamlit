@@ -31,7 +31,8 @@ st.header('2024 On The Door Forecasts')
 st.markdown("""---""")
 
 st.header('Title Chances!')
-# fig = px.pie(sheets_df, values='prob', names='Team', title='Before Wild Card Week')
+st.subheader('Before Wild Card Week')
+# fig = px.pie(sheets_df, values='prob', names='Team')
 # st.plotly_chart(fig, use_container_width=True)
 
 # sheets_df = champ_df.rename(columns={"franchise_name" : "Team", "Champ" : "Probability"})
