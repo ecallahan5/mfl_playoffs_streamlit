@@ -51,9 +51,10 @@ st.header('Title Chances!')
 div_sheet_url = st.secrets["gsheets"]["div_data_url"]
 div_df = pd.DataFrame(run_query(f'SELECT * FROM "{div_sheet_url}"'))
 
+st.subheader('Before Conference Championship Week')
 # fig2 = px.pie(div_df, values='title_chance', names='Team', title='Before Conference Champ Week')
 st.bar_chart(div_df, x='Team', y='title_chance')
-st.subheader('Before Conference Championship Week')
+
 
 # # Update with Conference Final Results
 
