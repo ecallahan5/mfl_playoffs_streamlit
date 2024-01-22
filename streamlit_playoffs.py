@@ -41,7 +41,7 @@ st.header('Title Chances!')
 # # Update with Wild Card Results
 # wc_sheet_url = st.secrets["gsheets"]["wc_data_url"]
 # wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_sheet_url}"'))
-st.subheader('Before Divisional Week')
+# st.subheader('Before Divisional Week')
 
 # fig1 = px.pie(wc_df, values='title_chance', names='Team', title='Before Divisional Week')
 # st.plotly_chart(fig1, use_container_width=True)
@@ -53,6 +53,7 @@ div_df = pd.DataFrame(run_query(f'SELECT * FROM "{div_sheet_url}"'))
 
 # fig2 = px.pie(div_df, values='title_chance', names='Team', title='Before Conference Champ Week')
 st.bar_chart(div_df, x='Team', y='title_chance')
+st.subheader('Before Conference Championship Week')
 
 # # Update with Conference Final Results
 
