@@ -27,8 +27,8 @@ def run_query(query):
 # sheet_url = st.secrets["gsheets"]["private_gsheets_url"]
 # sheets_df = pd.DataFrame(run_query(f'SELECT * FROM "{sheet_url}"'))
 
-st.header('2024 On The Door Forecasts')
-st.markdown("""---""")
+st.header('2025 On The Door Forecasts')
+st.divider()
 
 st.header('Title Chances!')
 
@@ -48,12 +48,12 @@ st.header('Title Chances!')
 # st.bar_chart(wc_df, x='Team', y='title_chance')
 
 # # Update with Division Round Results
-div_sheet_url = st.secrets["gsheets"]["div_data_url"]
-div_df = pd.DataFrame(run_query(f'SELECT * FROM "{div_sheet_url}"'))
+# div_sheet_url = st.secrets["gsheets"]["div_data_url"]
+# div_df = pd.DataFrame(run_query(f'SELECT * FROM "{div_sheet_url}"'))
 
-st.subheader('Before Conference Championship Week')
+# st.subheader('Before Conference Championship Week')
 # fig2 = px.pie(div_df, values='title_chance', names='Team', title='Before Conference Champ Week')
-st.bar_chart(div_df, x='Team', y='title_chance')
+# st.bar_chart(div_df, x='Team', y='title_chance')
 
 
 # # Update with Conference Final Results
