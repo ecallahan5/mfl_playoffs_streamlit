@@ -25,6 +25,10 @@ def run_query(query):
     return rows
 
 sheet_url = st.secrets["gsheets"]["private_gsheets_url"]
+wc_sheet_url = st.secrets["gsheets"]["wc_data_url"]
+div_sheet_url = st.secrets["gsheets"]["div_data_url"]
+conf_sheet_url = st.secrets["gsheets"]["conf_data_url"]
+
 sheets_df = pd.DataFrame(run_query(f'SELECT * FROM "{sheet_url}"'))
 
 st.header('2025 On The Door Forecasts')
@@ -35,11 +39,10 @@ st.header('Title Chances!')
 fig = px.pie(sheets_df, values='prob', names='Team')
 st.plotly_chart(fig, use_container_width=True)
 
-sheets_df = champ_df.rename(columns={"franchise_name" : "Team", "Champ" : "Probability"})
+sheets_df = sheets_df.rename(columns={"franchise_name" : "Team", "Champ" : "Probability"})
 st.bar_chart(sheets_df, x='Team', y='title_chance')
 
 # # Update with Wild Card Results
-# wc_sheet_url = st.secrets["gsheets"]["wc_data_url"]
 # wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_sheet_url}"'))
 # st.subheader('Before Divisional Week')
 
@@ -48,7 +51,6 @@ st.bar_chart(sheets_df, x='Team', y='title_chance')
 # st.bar_chart(wc_df, x='Team', y='title_chance')
 
 # # Update with Division Round Results
-# div_sheet_url = st.secrets["gsheets"]["div_data_url"]
 # div_df = pd.DataFrame(run_query(f'SELECT * FROM "{div_sheet_url}"'))
 
 # st.subheader('Before Conference Championship Week')
@@ -58,7 +60,6 @@ st.bar_chart(sheets_df, x='Team', y='title_chance')
 
 # # Update with Conference Final Results
 
-# conf_sheet_url = st.secrets["gsheets"]["conf_data_url"]
 # conf_df = pd.DataFrame(run_query(f'SELECT * FROM "{conf_sheet_url}"'))
 
 # fig3 = px.pie(conf_df, values='title_chance', names='Team', title='Before Super Bowl')
