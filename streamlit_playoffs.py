@@ -39,7 +39,7 @@ st.header('Title Chances!')
 fig = px.pie(sheets_df, values='prob', names='Team')
 st.plotly_chart(fig, use_container_width=True)
 
-sheets_df = sheets_df.rename(columns={"franchise_name" : "Team", "Champ" : "Probability"})
+# sheets_df = sheets_df.rename(columns={"franchise_name" : "Team", "Champ" : "Probability"})
 st.bar_chart(sheets_df, x='Team', y='title_chance')
 
 # # Update with Wild Card Results
