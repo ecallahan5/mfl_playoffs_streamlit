@@ -24,19 +24,19 @@ def run_query(query):
     rows = rows.fetchall()
     return rows
 
-# sheet_url = st.secrets["gsheets"]["private_gsheets_url"]
-# sheets_df = pd.DataFrame(run_query(f'SELECT * FROM "{sheet_url}"'))
+sheet_url = st.secrets["gsheets"]["private_gsheets_url"]
+sheets_df = pd.DataFrame(run_query(f'SELECT * FROM "{sheet_url}"'))
 
 st.header('2025 On The Door Forecasts')
 st.divider()
 
 st.header('Title Chances!')
 
-# fig = px.pie(sheets_df, values='prob', names='Team')
-# st.plotly_chart(fig, use_container_width=True)
+fig = px.pie(sheets_df, values='prob', names='Team')
+st.plotly_chart(fig, use_container_width=True)
 
-# sheets_df = champ_df.rename(columns={"franchise_name" : "Team", "Champ" : "Probability"})
-# st.bar_chart(sheets_df, x='Team', y='title_chance')
+sheets_df = champ_df.rename(columns={"franchise_name" : "Team", "Champ" : "Probability"})
+st.bar_chart(sheets_df, x='Team', y='title_chance')
 
 # # Update with Wild Card Results
 # wc_sheet_url = st.secrets["gsheets"]["wc_data_url"]
