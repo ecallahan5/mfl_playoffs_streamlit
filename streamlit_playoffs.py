@@ -29,7 +29,7 @@ wc_sheet_url = st.secrets["gsheets"]["wc_data_url"]
 div_sheet_url = st.secrets["gsheets"]["div_data_url"]
 conf_sheet_url = st.secrets["gsheets"]["conf_data_url"]
 
-sheets_df = pd.DataFrame(run_query(f'SELECT * FROM "{sheet_url}"'))
+# sheets_df = pd.DataFrame(run_query(f'SELECT * FROM "{sheet_url}"'))
 
 st.header('2025 On The Door Forecasts')
 st.divider()
@@ -47,7 +47,7 @@ wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_sheet_url}"'))
 st.subheader('Before Divisional Week')
 
 # fig1 = px.pie(wc_df, values='title_chance', names='Team', title='Before Divisional Week')
-st.plotly_chart(fig1, use_container_width=True)
+# st.plotly_chart(fig1, use_container_width=True)
 st.bar_chart(wc_df, x='Team', y='title_chance')
 
 # # Update with Division Round Results
