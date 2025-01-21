@@ -43,19 +43,19 @@ st.header('Title Chances!')
 # st.bar_chart(sheets_df, x='Team', y='title_chance')
 
 # # Update with Wild Card Results
-wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_sheet_url}"'))
-st.subheader('Before Divisional Week')
+# wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_sheet_url}"'))
+# st.subheader('Before Divisional Week')
 
 # fig1 = px.pie(wc_df, values='title_chance', names='Team', title='Before Divisional Week')
 # st.plotly_chart(fig1, use_container_width=True)
-st.bar_chart(wc_df, x='Team', y='title_chance')
+# st.bar_chart(wc_df, x='Team', y='title_chance')
 
-# # Update with Division Round Results
-# div_df = pd.DataFrame(run_query(f'SELECT * FROM "{div_sheet_url}"'))
+# Update with Division Round Results
+div_df = pd.DataFrame(run_query(f'SELECT * FROM "{div_sheet_url}"'))
 
-# st.subheader('Before Conference Championship Week')
+st.subheader('Before Conference Championship Week')
 # fig2 = px.pie(div_df, values='title_chance', names='Team', title='Before Conference Champ Week')
-# st.bar_chart(div_df, x='Team', y='title_chance')
+st.bar_chart(div_df, x='Team', y='title_chance')
 
 
 # # Update with Conference Final Results
