@@ -51,7 +51,7 @@ st.bar_chart(sheets_df, x='Team', y='title_chance')
 # st.bar_chart(wc_df, x='Team', y='title_chance')
 
 # Update with Division Round Results
-div_df = pd.DataFrame(run_query(f'SELECT * FROM "{div_sheet_url}"'))
+# div_df = pd.DataFrame(run_query(f'SELECT * FROM "{div_sheet_url}"'))
 
 # st.subheader('Before Conference Championship Week')
 # # fig2 = px.pie(div_df, values='title_chance', names='Team', title='Before Conference Champ Week')
