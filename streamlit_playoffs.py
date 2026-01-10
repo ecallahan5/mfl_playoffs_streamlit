@@ -4,6 +4,11 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 from google.oauth2 import service_account
+import collections
+import collections.abc
+# Patch for collections.Iterable compatibility with Python 3.10+
+if not hasattr(collections, 'Iterable'):
+    collections.Iterable = collections.abc.Iterable
 from gsheetsdb import connect
 
 round_select = st.radio(
