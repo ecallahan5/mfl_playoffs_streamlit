@@ -36,19 +36,20 @@ st.divider()
 
 st.header('Title Chances!')
 
-fig = px.pie(sheets_df, values='title_chance', names='Team')
-st.plotly_chart(fig, use_container_width=True)
+# # Initial chances after the draft
+# fig = px.pie(sheets_df, values='title_chance', names='Team')
+# st.plotly_chart(fig, use_container_width=True)
 
-sheets_df = sheets_df.rename(columns={"franchise_name": "Team", "Champ": "Probability"})
-st.bar_chart(sheets_df, x='Team', y='title_chance')
+# sheets_df = sheets_df.rename(columns={"franchise_name": "Team", "Champ": "Probability"})
+# st.bar_chart(sheets_df, x='Team', y='title_chance')
 
-# # Update with Wild Card Results
-# wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_sheet_url}"'))
-# st.subheader('Before Divisional Week')
+# Update with Wild Card Results
+wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_sheet_url}"'))
+st.subheader('Before Divisional Week')
 
-# fig1 = px.pie(wc_df, values='title_chance', names='Team', title='Before Divisional Week')
-# st.plotly_chart(fig1, use_container_width=True)
-# st.bar_chart(wc_df, x='Team', y='title_chance')
+fig1 = px.pie(wc_df, values='title_chance', names='Team', title='Before Divisional Week')
+st.plotly_chart(fig1, use_container_width=True)
+st.bar_chart(wc_df, x='Team', y='title_chance')
 
 # # Update with Division Round Results
 # div_df = pd.DataFrame(run_query(f'SELECT * FROM "{div_sheet_url}"'))
