@@ -36,15 +36,19 @@ st.divider()
 
 st.header('Title Chances!')
 
+###########################################
+# # Initial chances after the draft 
+###########################################
 
-# # Initial chances after the draft
 # fig = px.pie(sheets_df, values='title_chance', names='Team')
 # st.plotly_chart(fig, use_container_width=True)
 
 # sheets_df = sheets_df.rename(columns={"franchise_name": "Team", "Champ": "Probability"})
 # st.bar_chart(sheets_df, x='Team', y='title_chance')
 
+###########################################
 # Update with Wild Card Results
+###########################################
 # wc_df = pd.DataFrame(run_query(f'SELECT * FROM "{wc_sheet_url}"'))
 # st.subheader('Before Divisional Week')
 
@@ -52,16 +56,18 @@ st.header('Title Chances!')
 
 # st.bar_chart(wc_df, x='Team', y='title_chance')
 
+###########################################
 # # Update with Division Round Results
+###########################################
 div_df = pd.DataFrame(run_query(f'SELECT * FROM "{div_sheet_url}"'))
-# st.subheader('Before Conference Championship Week')
+st.subheader('Before Conference Championship Week')
 
-# fig2 = px.pie(div_df, values='title_chance', names='Team', title='Before Conference Champ Week')
+fig2 = px.pie(div_df, values='title_chance', names='Team', title='Before Conference Champ Week')
 st.bar_chart(div_df, x='Team', y='title_chance')
 
-
+###########################################
 # # Update with Conference Final Results
-
+###########################################
 # conf_df = pd.DataFrame(run_query(f'SELECT * FROM "{conf_sheet_url}"'))
 
 # fig3 = px.pie(conf_df, values='title_chance', names='Team', title='Before Super Bowl')
