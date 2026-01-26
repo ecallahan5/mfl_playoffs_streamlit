@@ -75,7 +75,7 @@ st.subheader('Before Super Bowl')
 
 fig3 = px.pie(conf_df, values='title_chance', names='Team', title='Before Super Bowl')
 st.plotly_chart(fig3, use_container_width=True)
-st.bar_chart(div_df, x='Team', y='title_chance')
+st.bar_chart(conf_df, x='Team', y='title_chance')
 
 # if round_select == 'Wild Card':
 #     st.plotly_chart(fig, use_container_width=True)
